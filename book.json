@@ -8,8 +8,8 @@
     "plugins": [
         "donate",
         "github-buttons@2.1.0",
-        "edit-link",
         "multipart",
+        "disqus",
         "summary",
         "github"
     ],
@@ -29,10 +29,6 @@
                 "star"
             ],
             "size": "small"
-        },
-        "edit-link": {
-            "base": "https://github.com/jartto/gitbook/master",
-            "label": "Edit This Page"
         },
         "disqus": {
             "shortName": "introducetogitbook"
