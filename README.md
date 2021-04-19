@@ -137,3 +137,11 @@ npm install gitbook-plugin-flexible-alerts
 
 小技巧：`NPM` 中搜索关键字 [`GitBook-Plugin`](https://www.npmjs.com/search?q=gitbook-plugin)，发现更多插件。
 
+
+
+
+
+# 参考优秀的 gitbook
+
+https://leohxj.gitbooks.io/a-programmer-prepares/content/writing/using-gitbook.html
+

@@ -10,7 +10,8 @@
         "github-buttons@2.1.0",
         "edit-link",
         "multipart",
-        "summary"
+        "summary",
+        "github"
     ],
 
     "pluginsConfig": {
@@ -35,6 +36,9 @@
         },
         "disqus": {
             "shortName": "introducetogitbook"
+        },
+        "github": {
+            "url": "https://github.com/zhaoda/webpack-handbook"
         }
     }
 }
