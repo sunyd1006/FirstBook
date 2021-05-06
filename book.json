@@ -1,7 +1,7 @@
 {
-    "title": "Jartto-GitBook-Demo",
-    "description": "Jartto-GitBook-Demo",
-    "author": "sphard",
+    "title": "Sunyd FirstBook",
+    "description": "Sunyd FirstBook",
+    "author": "sunyd",
     "language": "zh-hans",
     "root": ".",
 
@@ -11,10 +11,12 @@
         "multipart",
         "disqus",
         "summary",
+        "book-summary-scroll-position-saver",
+        "edit-link-plus",
         "chapter-fold",
         "back-to-top-button",
         "github",
-	"splitter"
+        "splitter"
     ],
 
     "pluginsConfig": {
@@ -25,6 +27,9 @@
             "button": "打赏",
             "alipayText": "微信打赏",
             "wechatText": "微信联系"
+        },
+        "edit-link-plus": {
+            "base": "https://github.com/sunyd1006/FirstBook"
         },
         "github-buttons": {
             "repo": "jartto/gitbook",

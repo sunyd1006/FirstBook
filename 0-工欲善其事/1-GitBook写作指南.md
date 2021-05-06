@@ -21,6 +21,8 @@
 
 
 ## 常用命令
+GitBook学习使用笔记：https://zq99299.gitbooks.io/gitbook-guide/content/
+
 
 ```
 npm install gitbook-cli -g , 配置一本书
@@ -51,6 +53,7 @@ $ gitbook install ./
 常用插件详细指南：https://segmentfault.com/a/1190000019806829
 
 配置Summary：https://www.kancloud.cn/layty/day/703431
+
 
 
 
