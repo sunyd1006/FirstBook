@@ -1,0 +1,414 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>GitBook写作指南 · Jartto-GitBook-Demo</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="sphard">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2-Tips.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"jartto/gitbook","types":["star"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    工欲善其事
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="1-GitBook写作指南.html">
+            
+                <a href="1-GitBook写作指南.html">
+            
+                    
+                    GitBook写作指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="2-Tips.html">
+            
+                <a href="2-Tips.html">
+            
+                    
+                    Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">个人日记</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../1-个人日记/1-个人随笔.html">
+            
+                <a href="../1-个人日记/1-个人随笔.html">
+            
+                    
+                    个人随笔
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">不知何名</li>
+        
+        
+    
+
+    
+        
+        <li class="header">Images</li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >GitBook写作指南</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="gitbook-&#x5199;&#x4F5C;&#x6307;&#x5357;">Gitbook &#x5199;&#x4F5C;&#x6307;&#x5357;</h1>
+<h2 id="todo">TODO</h2>
+<ul>
+<li>summary&#x63D2;&#x4EF6;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x751F;&#x6210;&#x7684;&#x7ED3;&#x6784;&#x662F;&#x6CA1;&#x6709;&#x7F29;&#x8FDB;&#x7684;&#x5462;</li>
+</ul>
+<h2 id="&#x5199;&#x4EC0;&#x4E48;&#x5462;">&#x5199;&#x4EC0;&#x4E48;&#x5462;</h2>
+<p>&#x8FD8;&#x4E0D;&#x77E5;&#x9053;&#xFF0C;&#x5148;&#x628A;&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x597D;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5199;&#x4E66;&#x4E86;</p>
+<h3 id="&#x5199;&#x4E66;&#x6B65;&#x9AA4;">&#x5199;&#x4E66;&#x6B65;&#x9AA4;</h3>
+<ol>
+<li>&#x521B;&#x5EFA;github</li>
+<li>&#x5728;gitbook&#x754C;&#x9762;&#x914D;&#x7F6E;</li>
+<li>&#x6284;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684;&#x914D;&#x7F6E;&#x5C31;&#x597D;&#x4E86;</li>
+</ol>
+<h2 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;">&#x5E38;&#x7528;&#x547D;&#x4EE4;</h2>
+<pre><code>npm install gitbook-cli -g , &#x914D;&#x7F6E;&#x4E00;&#x672C;&#x4E66;
+gitbook init, &#x521D;&#x59CB;&#x5316;&#x4E00;&#x672C;&#x4E66;
+
+gitbook serve,&#xFF08;&#x914D;&#x7F6E;summary&#x63D2;&#x4EF6;&#x540E;&#x53EF;&#x81EA;&#x52A8;&#x751F;&#x6210;summary&#xFF09;&#x5F00;&#x542F;&#x672C;&#x5730;&#x9884;&#x89C8;&#x3002;
+
+gitbook build&#xFF0C;&#x751F;&#x6210;_books&#x76EE;&#x5F55;&#x3002;
+</code></pre><h2 id="gitbook">GitBook</h2>
+<p>&#x5E38;&#x7528;&#x63D2;&#x4EF6;&#xFF1A;</p>
+<ul>
+<li>spliter&#xFF1A;<a href="https://zhaoda.net/2015/11/09/gitbook-plugins/" target="_blank">https://zhaoda.net/2015/11/09/gitbook-plugins/</a></li>
+</ul>
+<pre><code># &#x5B89;&#x88C5;&#x63D2;&#x4EF6;
+$ gitbook install ./
+</code></pre><p>&#x535A;&#x4E3B;&#x63D2;&#x4EF6;&#x548C;&#x7B80;&#x5386;&#x914D;&#x7F6E;&#x6307;&#x5357;&#xFF1A;<a href="https://zhousiwei.gitee.io/2019/06/24/GitBook%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E5%8F%8A%E4%BC%98%E5%8C%96/" target="_blank">https://zhousiwei.gitee.io/2019/06/24/GitBook%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE%E5%8F%8A%E4%BC%98%E5%8C%96/</a></p>
+<p>&#x5E38;&#x7528;&#x63D2;&#x4EF6;&#x8BE6;&#x7EC6;&#x6307;&#x5357;&#xFF1A;<a href="https://segmentfault.com/a/1190000019806829" target="_blank">https://segmentfault.com/a/1190000019806829</a></p>
+<p>&#x914D;&#x7F6E;Summary&#xFF1A;<a href="https://www.kancloud.cn/layty/day/703431" target="_blank">https://www.kancloud.cn/layty/day/703431</a></p>
+<h3 id="vim">VIM</h3>
+<p>gg: &#x884C;&#x9996;
+G: &#x884C;&#x5C3E;</p>
+<p>^: &#x884C;&#x9996; 
+$: &#x884C;&#x5C3E;</p>
+<h3 id="&#x53C2;&#x8003;&#x4F18;&#x79C0;&#x7684;-gitbook">&#x53C2;&#x8003;&#x4F18;&#x79C0;&#x7684; gitbook</h3>
+<p>&#x5982;&#x4F55;&#x5B89;&#x88C5;gitbook-cli&#xFF1A;<a href="https://github.com/GitbookIO/gitbook-cli/issues/113" target="_blank">https://github.com/GitbookIO/gitbook-cli/issues/113</a></p>
+<p>Github page&#xFF1A; <a href="https://www.chengweiyang.cn/gitbook/github-pages/README.html" target="_blank">https://www.chengweiyang.cn/gitbook/github-pages/README.html</a></p>
+<p><a href="https://jackchan1999.github.io/2017/05/01/gitbook/GitBook&#x4F7F;&#x7528;&#x6559;&#x7A0B;/" target="_blank">gitbook&#x4F7F;&#x7528;&#x6559;&#x7A0B;</a></p>
+<p><a href="https://leohxj.gitbooks.io/a-programmer-prepares/content/writing/using-gitbook.html" target="_blank">https://leohxj.gitbooks.io/a-programmer-prepares/content/writing/using-gitbook.html</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 工欲善其事">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2-Tips.html" class="navigation navigation-next " aria-label="Next page: Tips">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"GitBook写作指南","level":"1.3","depth":1,"next":{"title":"Tips","level":"1.4","depth":1,"path":"0-工欲善其事/2-Tips.md","ref":"0-工欲善其事/2-Tips.md","articles":[]},"previous":{"title":"工欲善其事","level":"1.2","depth":1,"path":"0-工欲善其事/README.md","ref":"0-工欲善其事/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","multipart","disqus","summary","chapter-fold","back-to-top-button","github","splitter","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"disqus":{"useIdentifier":false,"shortName":"introducetogitbook"},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"livereload":{},"summary":{},"splitter":{},"search":{},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"_images/wechatpay.png","alipayText":"微信打赏","button":"打赏","title":"","wechat":"_images/followme.png","wechatText":"微信联系"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"jartto/gitbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"sphard","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Jartto-GitBook-Demo","language":"zh-hans","gitbook":"*","description":"Jartto-GitBook-Demo"},"file":{"path":"0-工欲善其事/1-GitBook写作指南.md","mtime":"2021-05-06T03:39:14.601Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-06T05:16:59.628Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

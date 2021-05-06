@@ -11,17 +11,20 @@
         "multipart",
         "disqus",
         "summary",
-        "github"
+        "chapter-fold",
+        "back-to-top-button",
+        "github",
+	"splitter"
     ],
 
     "pluginsConfig": {
         "donate": {
-            "wechat": "http://jartto.wang/images/wechatpay.jpg",
-            "alipay": "http://jartto.wang/images/alipay.jpg",
+            "wechat": "_images/followme.png",
+            "alipay": "_images/wechatpay.png",
             "title": "",
             "button": "打赏",
-            "alipayText": "支付宝打赏",
-            "wechatText": "微信打赏"
+            "alipayText": "微信打赏",
+            "wechatText": "微信联系"
         },
         "github-buttons": {
             "repo": "jartto/gitbook",
