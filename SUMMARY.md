@@ -3,8 +3,9 @@
 
 
 - [GitBook写作指南](0-学习笔记/1-GitBook写作指南.md)
-- [Tips](0-学习笔记/2-Tips.md)
-- [Anaconda](0-学习笔记/Anaconda.md)
+- [安装环境](0-学习笔记/2-安装环境.md)
+- [安装软件](0-学习笔记/3-安装软件.md)
+- [Linux](0-学习笔记/4-Linux.md)
 
 ## 日记
 
