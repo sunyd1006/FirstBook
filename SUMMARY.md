@@ -5,7 +5,10 @@
 - [GitBook写作指南](0-学习笔记/1-GitBook写作指南.md)
 - [安装环境](0-学习笔记/2-安装环境.md)
 - [安装软件](0-学习笔记/3-安装软件.md)
-- [Linux](0-学习笔记/4-Linux.md)
+- [Git Linux Vim](0-学习笔记/4-Git_Linux_Vim.md)
+- [数据结构总结](0-学习笔记/5-数据结构总结.md)
+- [Scala语言](0-学习笔记/6-Scala语言.md)
+- [Spark总结](0-学习笔记/7-Spark总结.md)
 
 ## 日记
 
