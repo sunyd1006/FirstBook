@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>安装软件 · Sunyd FirstBook</title>
+        <title>数据结构总结 · Sunyd FirstBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -82,10 +82,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="4-Git_Linux_Vim.html" />
+    <link rel="next" href="6-Scala语言.html" />
     
     
-    <link rel="prev" href="2-安装环境.html" />
+    <link rel="prev" href="4-Git_Linux_Vim.html" />
     
 
     <style>
@@ -166,7 +166,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4" data-path="3-安装软件.html">
+        <li class="chapter " data-level="1.4" data-path="3-安装软件.html">
             
                 <a href="3-安装软件.html">
             
@@ -192,7 +192,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="5-数据结构总结.html">
+        <li class="chapter active" data-level="1.6" data-path="5-数据结构总结.html">
             
                 <a href="5-数据结构总结.html">
             
@@ -321,7 +321,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >安装软件</a>
+        <a href=".." >数据结构总结</a>
     </h1>
 </div>
 
@@ -336,12 +336,35 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="anaconda-mac-&#x6253;&#x5F00;-jupyter">Anaconda Mac &#x6253;&#x5F00; Jupyter</h1>
-<p>terminal: python3 -m IPython notebook</p>
-<p>&#x914D;&#x7F6E;&#x522B;&#x540D;&#xFF0C;&#x5FEB;&#x6377;&#x6253;&#x5F00;&#xFF1A;</p>
-<pre><code>echo &apos;alias notebook=&quot;cd &amp;&amp; python3 -m IPython notebook&quot;&apos;&gt;&gt; ~/.bash_profile
-</code></pre><p>mac&#x4E0B;&#x66F4;&#x6539;Jupyter notebook&#x7684;&#x9ED8;&#x8BA4;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF1A;
-<a href="https://blog.csdn.net/weixin_43289607/article/details/82882581" target="_blank">https://blog.csdn.net/weixin_43289607/article/details/82882581</a></p>
+                                <h1 id="hllsketch">HllSketch</h1>
+<p>This is a high performance implementation of Phillipe Flajolets HLL sketch but with significantly improved error behavior.  If the ONLY use case for sketching is counting uniques and merging, the HLL sketch the HLL sketch is a reasonable choice, although the highest performing in terms of accuracy for storage space consumed is CPC (Compressed Probabilistic Counting). For large enough counts, this HLL version (with HLL_4) can be 2 to 16 times smaller than the Theta sketch family for the same accuracy.</p>
+<p>This implementation offers three different types of HLL sketch, each with different trade-offs with accuracy, space and performance. These types are specified with the {@link TgtHllType} parameter.</p>
+<p>In terms of accuracy, all three types, for the same lgConfigK, have the same error distribution as a function of n, the number of unique values fed to the sketch.  The configuration parameter lgConfigK is the log-base-2 of K, where K is the number of buckets or slots for the sketch.</p>
+<p>During warmup, when the sketch has only received a small number of unique items (up to about 10% of K), this implementation leverages a new class of estimator algorithms with significantly better accuracy.  </p>
+<p>This sketch also offers the capability of operating off-heap. Given a WritableMemory object created by the user, the sketch will perform all of its updates and internal phase transitions in that object, which can actually reside either on-heap or off-heap based on how it is configured. In large systems that must update and merge many millions of sketches, having the sketch operate off-heap avoids the serialization and deserialization costs of moving sketches
+to and from off-heap memory-mapped files, for example, and eliminates big garbage collection delays.</p>
+<p>&#x5C31;&#x7CBE;&#x8BFB;&#x800C;&#x8A00;&#xFF1A;&#x7CBE;&#x5EA6;&#x800C;&#x8A00;&#xFF0C;&#x5BF9;&#x4E8E;&#x76F8;&#x540C;&#x7684;lgConfigK&#xFF0C;&#x8FD9;&#x4E09;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x8BEF;&#x5DEE;&#x5206;&#x5E03;&#x90FD;&#x662F;n&#x7684;&#x51FD;&#x6570;&#xFF0C;n&#x662F;&#x8F93;&#x5165;&#x5230;&#x8349;&#x56FE;&#x7684;&#x552F;&#x4E00;&#x503C;&#x7684;&#x6570;&#x76EE;
+&#x914D;&#x7F6E;&#x53C2;&#x6570;lgConfigK = ln(k)/ln(2)&#xFF0C;&#x5176;&#x4E2D;K&#x662F;&#x8349;&#x56FE;&#x7684;&#x5B58;&#x50A8;&#x6876;&#x6216;&#x63D2;&#x69FD;&#x6570;&#xFF0C;&#x6876;&#x7684;&#x6570;&#x91CF;&#x3002;</p>
+<p>import org.apache.datasketches.hll.{HllSketch, TgtHllType, Union}</p>
+<p>var lgK = 12
+var sketch:HllSketch = new HllSketch(lgK); </p>
+<p>var n = 1000000
+(0 until 1000000).map(x=&gt;{
+  sketch.update(x)                      // &#x66F4;&#x65B0;&#x6570;&#x503C;. eg&#xFF0C;&#x7EDF;&#x8BA1;UV&#x65F6;&#xFF0C;sketch.update(cuid)
+})</p>
+<p>var estimate = sketch.getEstimate()     // &#x6807;&#x51C6;&#x5DEE;&lt;1&#xFF1A; 990116.6007366662
+var estUB = sketch.getUpperBound(1)     // &#x5728;&#x6807;&#x51C6;&#x5DEE;&#x4E3A;1&#xFF0C;&#x9884;&#x6D4B;&#x6700;&#x591A;&#xFF1A;1003076.68
+var estLB = sketch.getLowerBound(1)     // &#x5728;&#x6807;&#x51C6;&#x5DEE;&#x4E3A;1&#xFF0C;&#x9884;&#x6D4B;&#x6700;&#x5C11;&#xFF1A;977471.77</p>
+<p>import org.apache.datasketches.hll.{HllSketch, TgtHllType, Union}</p>
+<p>var lgK = 12
+var sketch:HllSketch = new HllSketch(lgK);       // TgtHllType.HLL_4 is the default</p>
+<p>var n = 1000000
+(0 until 1000000).map(x=&gt;{
+  sketch.update(x)                              // &#x66F4;&#x65B0;&#x6570;&#x503C;. eg&#xFF0C;&#x7EDF;&#x8BA1;UV&#x65F6;&#xFF0C;sketch.update(cuid)
+})</p>
+<p>var estimate = sketch.getEstimate()             // &#x6807;&#x51C6;&#x5DEE;&lt;1&#xFF1A; 990116.6007366662
+var estUB = sketch.getUpperBound(1)             // &#x5728;&#x6807;&#x51C6;&#x5DEE;&#x4E3A;1&#xFF0C;&#x9884;&#x6D4B;&#x6700;&#x591A;&#xFF1A;1003076.68
+var estLB = sketch.getLowerBound(1)             // &#x5728;&#x6807;&#x51C6;&#x5DEE;&#x4E3A;1&#xFF0C;&#x9884;&#x6D4B;&#x6700;&#x5C11;&#xFF1A;977471.77</p>
 
                                 
                                 </section>
@@ -369,12 +392,12 @@
 
             
                 
-                <a href="2-安装环境.html" class="navigation navigation-prev " aria-label="Previous page: 安装环境">
+                <a href="4-Git_Linux_Vim.html" class="navigation navigation-prev " aria-label="Previous page: Git Linux Vim">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="4-Git_Linux_Vim.html" class="navigation navigation-next " aria-label="Next page: Git Linux Vim">
+                <a href="6-Scala语言.html" class="navigation navigation-next " aria-label="Next page: Scala语言">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -385,7 +408,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"安装软件","level":"1.4","depth":1,"next":{"title":"Git Linux Vim","level":"1.5","depth":1,"path":"0-学习笔记/4-Git_Linux_Vim.md","ref":"0-学习笔记/4-Git_Linux_Vim.md","articles":[]},"previous":{"title":"安装环境","level":"1.3","depth":1,"path":"0-学习笔记/2-安装环境.md","ref":"0-学习笔记/2-安装环境.md","articles":[]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","multipart","disqus","summary","book-summary-scroll-position-saver","edit-link-plus","chapter-fold","back-to-top-button","github","splitter"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"disqus":{"useIdentifier":false,"shortName":"introducetogitbook"},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"book-summary-scroll-position-saver":{},"summary":{},"splitter":{},"search":{},"edit-link-plus":{"label":"Edit This Page","base":"https://github.com/sunyd1006/FirstBook"},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"_images/wechatpay.png","alipayText":"微信打赏","button":"打赏","title":"","wechat":"_images/followme.png","wechatText":"微信联系"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"jartto/gitbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"sunyd","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Sunyd FirstBook","language":"zh-hans","gitbook":"*","description":"Sunyd FirstBook"},"file":{"path":"0-学习笔记/3-安装软件.md","mtime":"2021-05-25T09:34:55.948Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-25T09:44:30.444Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据结构总结","level":"1.6","depth":1,"next":{"title":"Scala语言","level":"1.7","depth":1,"path":"0-学习笔记/6-Scala语言.md","ref":"0-学习笔记/6-Scala语言.md","articles":[]},"previous":{"title":"Git Linux Vim","level":"1.5","depth":1,"path":"0-学习笔记/4-Git_Linux_Vim.md","ref":"0-学习笔记/4-Git_Linux_Vim.md","articles":[]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","multipart","disqus","summary","book-summary-scroll-position-saver","edit-link-plus","chapter-fold","back-to-top-button","github","splitter"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"disqus":{"useIdentifier":false,"shortName":"introducetogitbook"},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"book-summary-scroll-position-saver":{},"summary":{},"splitter":{},"search":{},"edit-link-plus":{"label":"Edit This Page","base":"https://github.com/sunyd1006/FirstBook"},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"_images/wechatpay.png","alipayText":"微信打赏","button":"打赏","title":"","wechat":"_images/followme.png","wechatText":"微信联系"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"jartto/gitbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"sunyd","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Sunyd FirstBook","language":"zh-hans","gitbook":"*","description":"Sunyd FirstBook"},"file":{"path":"0-学习笔记/5-数据结构总结.md","mtime":"2021-05-25T06:46:09.363Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-25T09:44:30.444Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

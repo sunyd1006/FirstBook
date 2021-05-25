@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>安装软件 · Sunyd FirstBook</title>
+        <title>Scala语言 · Sunyd FirstBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -82,10 +82,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="4-Git_Linux_Vim.html" />
+    <link rel="next" href="7-Spark总结.html" />
     
     
-    <link rel="prev" href="2-安装环境.html" />
+    <link rel="prev" href="5-数据结构总结.html" />
     
 
     <style>
@@ -166,7 +166,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4" data-path="3-安装软件.html">
+        <li class="chapter " data-level="1.4" data-path="3-安装软件.html">
             
                 <a href="3-安装软件.html">
             
@@ -205,7 +205,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.7" data-path="6-Scala语言.html">
+        <li class="chapter active" data-level="1.7" data-path="6-Scala语言.html">
             
                 <a href="6-Scala语言.html">
             
@@ -321,7 +321,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >安装软件</a>
+        <a href=".." >Scala语言</a>
     </h1>
 </div>
 
@@ -336,12 +336,79 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="anaconda-mac-&#x6253;&#x5F00;-jupyter">Anaconda Mac &#x6253;&#x5F00; Jupyter</h1>
-<p>terminal: python3 -m IPython notebook</p>
-<p>&#x914D;&#x7F6E;&#x522B;&#x540D;&#xFF0C;&#x5FEB;&#x6377;&#x6253;&#x5F00;&#xFF1A;</p>
-<pre><code>echo &apos;alias notebook=&quot;cd &amp;&amp; python3 -m IPython notebook&quot;&apos;&gt;&gt; ~/.bash_profile
-</code></pre><p>mac&#x4E0B;&#x66F4;&#x6539;Jupyter notebook&#x7684;&#x9ED8;&#x8BA4;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF1A;
-<a href="https://blog.csdn.net/weixin_43289607/article/details/82882581" target="_blank">https://blog.csdn.net/weixin_43289607/article/details/82882581</a></p>
+                                <h1 id="scala-&#x8BED;&#x8A00;">Scala &#x8BED;&#x8A00;</h1>
+<h2 id="&#x6D4B;&#x8BD5;-&#x65F6;&#x95F4;-&#x8F6C;&#x6362;">&#x6D4B;&#x8BD5; &#x65F6;&#x95F4; &#x8F6C;&#x6362;</h2>
+<p>import java.util.Date
+import java.text.SimpleDateFormat</p>
+<p>object test {</p>
+<p>  def tranTimeToString(tm:Long) :String={
+    val fm = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;)
+    val tim = fm.format(new Date(tm))
+    tim
+  }</p>
+<p>   def tranTimeToLong(tm:String) :Long={
+    val fm = new SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;)
+    val dt = fm.parse(tm)
+    val aa = fm.format(dt)
+    val tim: Long = dt.getTime()
+    tim
+  }
+}</p>
+<p>var time=System.currentTimeMillis()/(10 <em> 60 </em> 1000) <em> (10 </em> 60 * 1000).toString
+test(time)
+val fm = new SimpleDateFormat(&quot;yyyyMMdd&quot;)
+val dt = fm.parse(time)
+val aa = fm.format(dt)
+val tim: Long = dt.getTime()</p>
+<p>time = time - 24*3600
+test.tranTimeToString(time)</p>
+<h2 id="&#x5E38;&#x89C1;&#x793A;&#x4F8B;-&#x65F6;&#x95F4;&#x6233;&#x8F6C;&#x6362;-&#x89C4;&#x7EA6;&#x5206;&#x949F;">&#x5E38;&#x89C1;&#x793A;&#x4F8B; &#x65F6;&#x95F4;&#x6233;&#x8F6C;&#x6362; &#x89C4;&#x7EA6;&#x5206;&#x949F;</h2>
+<p>scala&gt; System.currentTimeMillis()
+res4: Long = 1617332186888</p>
+<p>scala&gt; System.currentTimeMillis()/(10 <em> 60 </em> 1000) <em> (10 </em> 60 * 1000)
+res5: Long = 1617331800000</p>
+<p>scala&gt; test.tranTimeToString(res4)
+res6: String = 2021-04-02 10:56:26</p>
+<p>scala&gt; test.tranTimeToString(res5)
+res7: String = 2021-04-02 10:50:00</p>
+<h2 id="&#x5E38;&#x89C1;&#x793A;&#x4F8B;-&#x65F6;&#x95F4;&#x6233;&#x8F6C;&#x6362;-&#x5012;&#x8BA1;&#x65F6;&#x4E00;&#x5929;">&#x5E38;&#x89C1;&#x793A;&#x4F8B; &#x65F6;&#x95F4;&#x6233;&#x8F6C;&#x6362; &#x5012;&#x8BA1;&#x65F6;&#x4E00;&#x5929;</h2>
+<p>scala&gt; test.tranTimeToString(time)
+res11: String = 2021-04-02 10:48:33</p>
+<p>scala&gt; time = time - 24<em>3600</em>1000
+time: Long = 1617245313600</p>
+<p>scala&gt; test.tranTimeToString(time)
+res12: String = 2021-04-01 10:48:33</p>
+<h2 id="&#x53BB;&#x4E71;&#x7801;">&#x53BB;&#x4E71;&#x7801;</h2>
+<p>(0 until 3).map(index =&gt;{
+  println(index)
+  if(index&gt;3) println(&quot;haha&quot;)
+})</p>
+<h2 id="&#x6D4B;&#x8BD5;-scala-hashset-concurrenthashmap-&#x904D;&#x5386;">&#x6D4B;&#x8BD5; Scala HashSet ConcurrentHashMap &#x904D;&#x5386;</h2>
+<p>import java.util.concurrent.ConcurrentHashMap
+import java.util</p>
+<p>val sidSetMap = new ConcurrentHashMap[String, util.HashSet[String]]
+sidSetMap.put(&quot;123&quot;, new util.HashSet<a href="">String</a>)
+sidSetMap.get(&quot;123&quot;).add(&quot;v1&quot;)
+sidSetMap.get(&quot;123&quot;).add(&quot;v2&quot;)
+sidSetMap.get(&quot;123&quot;).add(&quot;v3&quot;)</p>
+<p>// &#x4E00;&#x5B9A;&#x8981;&#x5BFC;&#x5165;&#x8F6C;&#x6362;&#x7C7B;
+import scala.collection.JavaConversions._
+sidSetMap.entrySet().foreach(entry=&gt;{
+    entry.getValue.foreach(sid=&gt;{
+        println(sid)
+    })
+})</p>
+<p>// &#x4E00;&#x5B9A;&#x8981;&#x5BFC;&#x5165;&#x8F6C;&#x6362;&#x7C7B;
+import scala.collection.JavaConversions._
+val set = new util.HashSet<a href="">String</a>
+set.add(&quot;a&quot;)
+set.add(&quot;b&quot;)
+set.add(&quot;c&quot;)</p>
+<p>set.foreach(one=&gt;{
+    println(one)
+})</p>
+<h2 id="map-foreach">Map foreach</h2>
+<p><a href="https://www.geeksforgeeks.org/scala-map-foreach-method-with-example/" target="_blank">https://www.geeksforgeeks.org/scala-map-foreach-method-with-example/</a></p>
 
                                 
                                 </section>
@@ -369,12 +436,12 @@
 
             
                 
-                <a href="2-安装环境.html" class="navigation navigation-prev " aria-label="Previous page: 安装环境">
+                <a href="5-数据结构总结.html" class="navigation navigation-prev " aria-label="Previous page: 数据结构总结">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="4-Git_Linux_Vim.html" class="navigation navigation-next " aria-label="Next page: Git Linux Vim">
+                <a href="7-Spark总结.html" class="navigation navigation-next " aria-label="Next page: Spark总结">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -385,7 +452,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"安装软件","level":"1.4","depth":1,"next":{"title":"Git Linux Vim","level":"1.5","depth":1,"path":"0-学习笔记/4-Git_Linux_Vim.md","ref":"0-学习笔记/4-Git_Linux_Vim.md","articles":[]},"previous":{"title":"安装环境","level":"1.3","depth":1,"path":"0-学习笔记/2-安装环境.md","ref":"0-学习笔记/2-安装环境.md","articles":[]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","multipart","disqus","summary","book-summary-scroll-position-saver","edit-link-plus","chapter-fold","back-to-top-button","github","splitter"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"disqus":{"useIdentifier":false,"shortName":"introducetogitbook"},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"book-summary-scroll-position-saver":{},"summary":{},"splitter":{},"search":{},"edit-link-plus":{"label":"Edit This Page","base":"https://github.com/sunyd1006/FirstBook"},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"_images/wechatpay.png","alipayText":"微信打赏","button":"打赏","title":"","wechat":"_images/followme.png","wechatText":"微信联系"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"jartto/gitbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"sunyd","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Sunyd FirstBook","language":"zh-hans","gitbook":"*","description":"Sunyd FirstBook"},"file":{"path":"0-学习笔记/3-安装软件.md","mtime":"2021-05-25T09:34:55.948Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-25T09:44:30.444Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Scala语言","level":"1.7","depth":1,"next":{"title":"Spark总结","level":"1.8","depth":1,"path":"0-学习笔记/7-Spark总结.md","ref":"0-学习笔记/7-Spark总结.md","articles":[]},"previous":{"title":"数据结构总结","level":"1.6","depth":1,"path":"0-学习笔记/5-数据结构总结.md","ref":"0-学习笔记/5-数据结构总结.md","articles":[]},"dir":"ltr"},"config":{"plugins":["donate","github-buttons@2.1.0","multipart","disqus","summary","book-summary-scroll-position-saver","edit-link-plus","chapter-fold","back-to-top-button","github","splitter"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"disqus":{"useIdentifier":false,"shortName":"introducetogitbook"},"github":{"url":"https://github.com/zhaoda/webpack-handbook"},"book-summary-scroll-position-saver":{},"summary":{},"splitter":{},"search":{},"edit-link-plus":{"label":"Edit This Page","base":"https://github.com/sunyd1006/FirstBook"},"multipart":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"alipay":"_images/wechatpay.png","alipayText":"微信打赏","button":"打赏","title":"","wechat":"_images/followme.png","wechatText":"微信联系"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"github-buttons":{"repo":"jartto/gitbook","types":["star"],"size":"small"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"sunyd","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Sunyd FirstBook","language":"zh-hans","gitbook":"*","description":"Sunyd FirstBook"},"file":{"path":"0-学习笔记/6-Scala语言.md","mtime":"2021-05-25T06:46:13.928Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-25T09:44:30.444Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
