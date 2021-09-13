@@ -2,11 +2,7 @@
 
 ## 放弃工作区修改、放弃index、放弃commit
 
-
-
-
-
-* 取消暂存：git reset HEAD <file>...
+* 取消暂存：git reset HEAD`<file>`...
 
 - 未提交到index，需要丢弃修改：git checkout -- filename
 - 已提交到index，需要丢弃修改：git reset HEAD filename
@@ -121,6 +117,11 @@ grep -rn "4101}" part-00009-ffd52e87-7d07-45b0-b0e8-89e73084039f.c000.csv| grep 
 
 // 将左边的，挂在到右边去
 sudo ln -s /apsarapangu/disk11/sunyindong.syd /home/admin/sunyindong.syd
+
+
+命令 ： chmod -R 755 tools_command/
+
+
 
 ## 移动隐藏文件：mv .[^.]* ..
 
